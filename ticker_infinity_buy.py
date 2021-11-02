@@ -168,7 +168,11 @@ while True:
                 sell_all = False
                 current_profit = check_profit(ticker,avg_price,possess_total)
                 print("수익률: ",current_profit)
-                if current_profit >=2 and sell_all == False:
+                if n < 100:
+                    k = 2.5
+                else:
+                    k = 1
+                if current_profit >=k and sell_all == False:
                     print('3%이상 매도 시작')
                     sell_price = get_current_price(ticker)
                     my_money = sell_price*(possess_total*0.9995)
